@@ -16,5 +16,24 @@ namespace WindowsFormsApp6
         {
             InitializeComponent();
         }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            if(form2.ShowDialog() == DialogResult.OK)
+            {
+                listBox1.Items.Add(form2.TextBox);
+            }
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+        }
     }
 }
